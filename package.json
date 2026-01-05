@@ -1,0 +1,29 @@
+
+{
+  "name": "json-formatter",
+  "version": "1.0.0",
+  "description": "JSON Formatter and Validator with multiple RFC specifications support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "json",
+    "formatter",
+    "validator",
+    "rfc8259",
+    "rfc7159",
+    "rfc4627",
+    "ecma404"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

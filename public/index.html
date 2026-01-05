@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Formatter & Validator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JSON Formatter & Validator</h1>
+            <p class="subtitle">Format, validate, and fix your JSON data</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="section-header">
+                    <h2>Input JSON</h2>
+                    <div class="actions">
+                        <button type="button" id="loadFileBtn" class="btn btn-secondary">
+                            📁 Load File
+                        </button>
+                        <button type="button" id="loadExampleBtn" class="btn btn-secondary">
+                            📄 Load Example
+                        </button>
+                        <button type="button" id="clearBtn" class="btn btn-secondary">
+                            🗑️ Clear
+                        </button>
+                    </div>
+                </div>
+
+                <textarea 
+                    id="jsonInput" 
+                    placeholder='{"example": "Paste your JSON here..."}'
+                    spellcheck="false"
+                ></textarea>
+
+                <input type="file" id="fileInput" accept=".json,application/json" style="display: none;">
+            </div>
+
+            <div class="options-section">
+                <div class="option-group">
+                    <label for="templateSelect">JSON Template:</label>
+                    <select id="templateSelect">
+                        <option value="4 Space Tab">4 Space Tab</option>
+                        <option value="3 Space Tab" selected>3 Space Tab</option>
+                        <option value="2 Space Tab">2 Space Tab</option>
+                        <option value="Compact">Compact</option>
+                        <option value="1 Tab">1 Tab</option>
+                    </select>
+                </div>
+
+                <div class="option-group">
+                    <label for="specSelect">JSON Specification:</label>
+                    <select id="specSelect">
+                        <option value="RFC 8259" selected>RFC 8259</option>
+                        <option value="RFC 7159">RFC 7159</option>
+                        <option value="RFC 4627">RFC 4627</option>
+                        <option value="ECMA-404">ECMA-404</option>
+                        <option value="Skip Validation">Skip Validation</option>
+                    </select>
+                </div>
+
+                <div class="option-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="fixJsonCheck" checked>
+                        <span>Fix JSON (auto-correct common errors)</span>
+                    </label>
+                </div>
+
+                <button type="button" id="formatBtn" class="btn btn-primary">
+                    ✨ Format JSON
+                </button>
+            </div>
+
+            <div class="output-section" id="outputSection" style="display: none;">
+                <div class="section-header">
+                    <h2>Formatted Output</h2>
+                    <div class="actions">
+                        <button type="button" id="copyBtn" class="btn btn-secondary">
+                            📋 Copy
+                        </button>
+                        <button type="button" id="downloadBtn" class="btn btn-secondary">
+                            💾 Download
+                        </button>
+                    </div>
+                </div>
+
+                <div id="validationStatus" class="status"></div>
+
+                <div id="messagesContainer"></div>
+
+                <textarea 
+                    id="jsonOutput" 
+                    readonly
+                    spellcheck="false"
+                ></textarea>
+            </div>
+        </main>
+
+        <footer>
+            <p>JSON Formatter & Validator | Supports multiple RFC specifications</p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
