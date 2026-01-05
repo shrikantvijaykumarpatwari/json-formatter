@@ -1,5 +1,5 @@
 // API endpoint
-const API_URL = 'http://localhost:3000/api/format';
+const API_URL = `${window.location.origin}/api/format`;
 
 // DOM elements
 const jsonInput = document.getElementById('jsonInput');
